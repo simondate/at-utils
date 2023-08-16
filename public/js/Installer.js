@@ -164,6 +164,8 @@ class Installer extends React.Component {
   }
   
   async saveConfig({ formData }) {
+    console.log('saveConfig')
+    console.log(formData)
     const res = await this.post('/save', formData);
     this.setState({ rootDir: (await res.json()).rootDir });
   }
