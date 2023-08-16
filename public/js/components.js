@@ -58,7 +58,6 @@ function Checkbox(props) {
 
 function ConfigForm(props) {
   const component = props.component;
-  console.log(props)
   return <div>
     <div className="alert alert-info"><b>Tip</b>: any settings which aren't required or have default values have been hidden. These can be revealed by selecting the checkbox below (<i>not recommended for beginners</i>).</div>
     <Checkbox label="Show advanced settings" checked={component.state.showAdvanced} onChange={() => component.setState({ showAdvanced: !component.state.showAdvanced })}/>
@@ -126,7 +125,7 @@ class Form extends React.Component {
         validate={validate} 
         extraErrors={this.props.extraErrors} 
         onChange={this.props.onChange ? (...args) => this.props.onChange(...args) : () => {}} 
-        onSubmit={this.props.onSubmit}
+        onSubmit={document.dispatchEvent(new Event('form-submit')) && this.props.onSubmit} 
         onError={this.onError} />
     } catch(e) {
       console.error(e);
