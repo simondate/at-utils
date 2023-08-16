@@ -58,6 +58,7 @@ function Checkbox(props) {
 
 function ConfigForm(props) {
   const component = props.component;
+  console.log(props)
   return <div>
     <div className="alert alert-info"><b>Tip</b>: any settings which aren't required or have default values have been hidden. These can be revealed by selecting the checkbox below (<i>not recommended for beginners</i>).</div>
     <Checkbox label="Show advanced settings" checked={component.state.showAdvanced} onChange={() => component.setState({ showAdvanced: !component.state.showAdvanced })}/>
