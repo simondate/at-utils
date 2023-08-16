@@ -125,7 +125,7 @@ class Form extends React.Component {
         validate={validate} 
         extraErrors={this.props.extraErrors} 
         onChange={this.props.onChange ? (...args) => this.props.onChange(...args) : () => {}} 
-        onSubmit={document.dispatchEvent(new Event('form-submit')) && this.props.onSubmit} 
+        onSubmit={() => document.dispatchEvent(new Event('form-submit')) && this.props.onSubmit} 
         onError={this.onError} />
     } catch(e) {
       console.error(e);
