@@ -168,6 +168,8 @@ class Installer extends React.Component {
     console.log('saveConfig')
     console.log(formData)
     const res = await this.post('/save', formData);
+    console.log(res.json())
+    console.log(res.json().rootDir)
     this.setState({ rootDir: (await res.json()).rootDir });
   }
 
