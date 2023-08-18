@@ -81,6 +81,7 @@ class Installer extends React.Component {
    */
 
   post(url, data = {}, options = {}) {
+    console.log(data);
     return this.fetch(url, 'POST', { 
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
