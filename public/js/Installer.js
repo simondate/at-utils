@@ -167,7 +167,7 @@ class Installer extends React.Component {
   async saveConfig({ formData }) {
     console.log('saveConfig')
     console.log(formData)
-    const res = await this.fetch(url, 'POST', { 
+    const res = await this.fetch('/save', 'POST', { 
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formData)
     });
