@@ -171,8 +171,6 @@ class Installer extends React.Component {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formData)
     });
-    console.log(res.json())
-    console.log(res.json().rootDir)
     this.setState({ rootDir: (await res.json()).rootDir });
   }
 
